@@ -213,7 +213,9 @@ public class Config {
         dragon.add(new ConfigBool(Text.literal("Enable Dragon spawn timers"), () -> Floor7.dragSpawnTimers, bool -> Floor7.dragSpawnTimers = bool));
         dragon.add(new ConfigBool(Text.literal("Send sound on dragon spawn"), () -> Floor7.sendSoundOnDragSpawn, bool -> Floor7.sendSoundOnDragSpawn = bool));
         dragon.add(new ConfigOptions<>(Text.literal("Healer prio"), DragSpawnTimer.Team.values(), () -> Floor7.healerTeam, team -> Floor7.healerTeam = team));
-        dragon.add(new ConfigBool(Text.literal("Render dragon health"), () -> Floor7.dragonHealth, bool -> Floor7.dragonHealth = bool));
+        dragon.add(new ConfigBool(Text.literal("Render Dragon health"), () -> Floor7.dragonHealth, bool -> Floor7.dragonHealth = bool));
+        dragon.add(new ConfigBool(Text.literal("Render Dragon tracer"), () -> Floor7.dragonTracer, bool -> Floor7.dragonTracer = bool));
+        dragon.add(new ConfigInt(Text.literal("Tracer Width"), () -> Floor7.tracerWidth, num -> Floor7.tracerWidth = num, 1,1,5));
         floor7.add(dragon);
 
         return floor7;

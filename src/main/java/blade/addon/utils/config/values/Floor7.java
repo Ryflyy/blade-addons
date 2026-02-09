@@ -1,6 +1,7 @@
 package blade.addon.utils.config.values;
 
 import blade.addon.features.dungeon.f7.dragons.DragSpawnTimer;
+import blade.addon.features.dungeon.f7.dragons.DragonTracer;
 import config.practical.data.SoundData;
 import config.practical.manager.ConfigValue;
 import net.minecraft.sound.SoundEvents;
@@ -147,6 +148,15 @@ public class Floor7 {
 
     @ConfigValue
     public static boolean dragonHealth = false;
+
+    @ConfigValue
+    private static Object dragonTracer = false;
+
+    @ConfigValue
+    public static DragonTracer.Team healerTeam = dragonTracer.TEAM.ARCHER_TEAM;
+
+    @ConfigValue
+    public static int tracerWidth = 0;
 
     @ConfigValue
     public static boolean maxorStunDuration = false;
