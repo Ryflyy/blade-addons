@@ -11,8 +11,12 @@ public class QuizTimer {
 
     private static final int START_DURATION = 220;
     private static final int QUESTION_DURATION = 100;
+    private static final int FIRST = 1;
+    private static final int SECOND = 2;
+    private static final int THIRD = 3;
 
     private static int tick = 0;
+    private static int progress = 0;
 
     public static void init() {
 
@@ -22,10 +26,13 @@ public class QuizTimer {
             String string = text.getString();
             if (string.equals("[STATUE] Oruo the Omniscient: I am Oruo the Omniscient. I have lived many lives. I have learned all there is to know.")) {
                 tick = START_DURATION;
+                progress = FIRST;
             } else if (string.equals("[STATUE] Oruo the Omniscient: 2 questions left... Then you will have proven your worth to me!")) {
                 tick = QUESTION_DURATION;
+                progress = SECOND;
             } else if (string.equals("[STATUE] Oruo the Omniscient: One more question!")) {
                 tick = QUESTION_DURATION;
+                progress = THIRD;
             }
 
             return false;
@@ -38,6 +45,7 @@ public class QuizTimer {
 
         Events.ON_LOCATION_CHANGE.register(newLocation -> {
             tick = 0;
+            progress = 0;
             return false;
         });
     }
@@ -47,8 +55,12 @@ public class QuizTimer {
     }
 
     public static void render(HUDComponent component, DrawContext context) {
-       RenderUtils.drawPrefixedTimer(component, context, "Quiz", tick);
+        RenderUtils.drawPrefixedTimer(component, context, both(), tick);
     }
-
-
-}
+    private static String both() {
+        if (Dungeons.quizProgress) {
+            return "Quiz (" + progress + "/3)";
+        }
+        return "Quiz";
+    }
+    }

@@ -130,6 +130,7 @@ public class Config {
         dungeons.add(new ConfigBool(Text.literal("Highlight teammates"), () -> Dungeons.highlightTeammates, bool -> Dungeons.highlightTeammates = bool));
         dungeons.add(new ConfigBool(Text.literal("Render class names"), () -> Dungeons.renderClassName, bool -> Dungeons.renderClassName = bool));
         dungeons.add(new ConfigBool(Text.literal("Time until quiz question"), () -> Dungeons.quizTimer, bool -> Dungeons.quizTimer = bool));
+        dungeons.add(new ConfigBool(Text.literal( "Quiz progress (needs other quiz setting on)"), () -> Dungeons.quizProgress, bool -> Dungeons.quizProgress = bool));
         dungeons.add(new ConfigBool(Text.literal("Draw boss health numbers"), () -> Dungeons.bossHealthNumbers, bool -> Dungeons.bossHealthNumbers = bool));
         return dungeons;
     }
