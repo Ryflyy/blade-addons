@@ -88,4 +88,17 @@ public class StormTickTimer {
     public static void renderDeathTime(HUDComponent component, DrawContext context) {
         RenderUtils.drawTimer(component, context, deathTime, Constants.DARK_PURPLE);
     }
+
+    public static void rendercolor(HUDComponent component, DrawContext context) {
+        double num = tick * Constants.TICK_DURATION;
+        double mod = num % 3;
+        if (Floor7.inDeathTicks && !Floor7.looklikeGoldor) mod = 3.0 - mod;
+        if (Floor7.inDeathTicks) num = mod;
+
+        System.out.println(num);
+
+        int color = (mod < 1 ? Constants.GREEN : mod < 2 ? Constants.ORANGE : Constants.RED);
+
+        RenderUtils.drawTimer(component, context, num, color);
+    }
 }

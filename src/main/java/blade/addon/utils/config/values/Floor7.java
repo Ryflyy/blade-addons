@@ -156,4 +156,7 @@ public class Floor7 {
 
     @ConfigValue
     public static boolean capitalizeHealthNumbers = true;
+
+    @ConfigValue
+    public static boolean looklikeGoldor;
 }

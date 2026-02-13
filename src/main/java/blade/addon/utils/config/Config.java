@@ -167,6 +167,7 @@ public class Config {
         storm.add(new ConfigBool(Text.literal("Pillar explode timer"), () -> Floor7.timePillarExplosion, bool -> Floor7.timePillarExplosion = bool));
         storm.add(new ConfigBool(Text.literal("Storm crushed notification"), () -> Floor7.notifyStormCrush, bool -> Floor7.notifyStormCrush = bool));
         floor7.add(storm);
+        storm.add(new ConfigBool(Text.literal("Look like Goldor"), () -> Floor7.looklikeGoldor, bool -> Floor7.looklikeGoldor = bool));
 
         ConfigSection goldor = new ConfigSection(Text.literal("Goldor"));
         goldor.add(new ConfigBool(Text.literal("Goldor tick timer"), () -> Floor7.enableGoldorTickTimer, bool -> Floor7.enableGoldorTickTimer = bool));

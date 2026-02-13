@@ -149,4 +149,7 @@ public class Components {
 
     @ConfigValue
     public static HUDComponent arrowSwapDisplay = new HUDComponent(0, 0, 100, 10, 1, "Selected arrow title", ArrowSwapper::displayNotification,  ArrowSwapper::renderNotification, () -> ExtraOptions.arrowSwapNotification &&  !Dungeons.combineScreenNotifications);
+
+    @ConfigValue
+    public static HUDComponent looklikeGoldor = new HUDComponent(0, 0, 100, 10, 1, "looklikeGoldor", StormTickTimer::display,  StormTickTimer::rendercolor, () -> Floor7.looklikeGoldor &&  !Dungeons.combineScreenNotifications);
 }
